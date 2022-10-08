@@ -92,3 +92,6 @@ p {
   border-radius: 15px;
   padding: 30px;
 }
+.link {
+  text-decoration: none;
+}
