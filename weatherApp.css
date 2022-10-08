@@ -1,0 +1,94 @@
+body {
+  background-color: rgb(177, 255, 233) !important;
+}
+h1 {
+  font-family: "Press Start 2P", cursive;
+  padding-top: 20px;
+  padding-left: 10px;
+  color: cornflowerblue;
+}
+
+#tempTodayCelsius {
+  text-decoration: none;
+}
+
+#tempTodayFahrenheit {
+  text-decoration: none;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  padding-left: 10px;
+  font-family: "Silkscreen", cursive;
+}
+
+.weatherappborder {
+  border: 10px solid cornflowerblue;
+  border-radius: 15px;
+  padding: 16px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+p {
+  padding-left: 10px;
+  text-align: center;
+  font-family: "Silkscreen", cursive;
+  font-size: larger;
+}
+.searching {
+  padding-top: 5px;
+  text-align: right;
+}
+.temptoday {
+  padding-top: 60px;
+}
+.today:hover {
+  background-color: rgb(247, 238, 219);
+  border-radius: 15px;
+  padding: 40px;
+  margin: 5px 0px 5px 0px;
+}
+.message:hover {
+  background-color: rgb(188, 215, 248);
+  border-radius: 15px;
+  padding: 10px;
+}
+.messagetext {
+  text-align: center;
+}
+.mainImage {
+  display: block;
+  margin: auto;
+  width: 150px;
+}
+.search {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.firstday:hover {
+  background-color: rgb(247, 238, 219);
+  border-radius: 15px;
+  padding: 30px;
+}
+.secday:hover {
+  background-color: rgb(247, 219, 219);
+  border-radius: 15px;
+  padding: 30px;
+}
+.thirdday:hover {
+  background-color: rgb(99, 247, 173);
+  border-radius: 15px;
+  padding: 30px;
+}
+.fourthday:hover {
+  background-color: rgb(116, 254, 254);
+  border-radius: 15px;
+  padding: 30px;
+}
+.fifthday:hover {
+  background-color: rgb(230, 210, 241);
+  border-radius: 15px;
+  padding: 30px;
+}

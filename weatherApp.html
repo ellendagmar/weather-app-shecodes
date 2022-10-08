@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/a602e8a876.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/weatherApp.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--AXIUS to make API callsfont-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weatherappborder">
+        <!--title & search-->
+        <div class="row upperborder">
+          <div class="col">
+            <h1 id="cityName"></h1>
+          </div>
+          <div class="col">
+            <form id="form-search">
+              <input
+                id="form-search-input"
+                type="search"
+                placeholder="Change city"
+                autofocus="on"
+              />
+            </form>
+            <button>Get your location</button>
+          </div>
+        </div>
+
+        <!--Today-->
+        <div class="row today">
+          <div class="col-4">
+            <h5 id="dateTime"></h5>
+            <h5 id="humidity">Humidity: 20%</h5>
+            <h5 id="wind">Wind: 1 m/s</h5>
+          </div>
+          <div class="col-2">
+            <div>
+              <h1 id="tempToday"></h1>
+              <h5>
+                <a id="tempTodayCelsius" href="#">°C</a>
+                /
+                <a id="tempTodayFahrenheit" href="#">°F</a>
+              </h5>
+            </div>
+          </div>
+          <div class="col-6">
+            <img src="images/sun.png" alt="sunny" class="mainImage" />
+          </div>
+        </div>
+
+        <!--Todays message-->
+        <div class="col message">
+          <h4 id="description">It is sunny today!</h4>
+        </div>
+
+        <!--5 day weather report-->
+        <div class="row">
+          <div class="col firstday">
+            <div class="row">
+              <img src="images/sun.png" alt="sunny" />
+            </div>
+            <div class="row">
+              <p>Mon</p>
+            </div>
+            <div class="row">
+              <p>20°C</p>
+            </div>
+          </div>
+          <div class="col secday">
+            <div class="row">
+              <img src="images/halfsun.png" alt="half cloudy" />
+            </div>
+            <div class="row">
+              <p>Tue</p>
+            </div>
+            <div class="row">
+              <p>16°C</p>
+            </div>
+          </div>
+          <div class="col thirdday">
+            <div class="row">
+              <img src="images/sun.png" alt="sunny" />
+            </div>
+            <div class="row">
+              <p>Wed</p>
+            </div>
+            <div class="row">
+              <p>19°C</p>
+            </div>
+          </div>
+          <div class="col fourthday">
+            <div class="row">
+              <img src="images/cloud.png" alt="cloudy" />
+            </div>
+            <div class="row">
+              <p>Thur</p>
+            </div>
+            <div class="row">
+              <p>16°C</p>
+            </div>
+          </div>
+          <div class="col fifthday">
+            <div class="row">
+              <img src="images/rain.png" alt="rainy" />
+            </div>
+            <div class="row">
+              <p>Fri</p>
+            </div>
+            <div class="row">
+              <p>15°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/weatherApp.js"></script>
+  </body>
+</html>
