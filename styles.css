@@ -7,13 +7,22 @@ h1 {
   padding-left: 10px;
   color: cornflowerblue;
 }
-
 #tempTodayCelsius {
   text-decoration: none;
 }
-
 #tempTodayFahrenheit {
   text-decoration: none;
+}
+.active {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: black;
+  cursor: default;
 }
 
 h2,

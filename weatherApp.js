@@ -1,5 +1,4 @@
 //---------- Inserting time and date
-
 let now = new Date();
 let date = now.getDate();
 let hours = now.getHours();
@@ -50,31 +49,24 @@ function changeCity(event) {
 }
 
 function showTemperature(response) {
-  console.log(response);
   document.querySelector("h1").innerHTML = response.data.name;
-  console.log(response.data.name);
-
   document.querySelector("#tempToday").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  console.log(response.data.main.humidity);
-
   document.querySelector(
     "#wind"
   ).innerHTML = `Wind: ${response.data.wind.speed} m/s`;
-  console.log(response.data.wind.speed);
-
   document.querySelector(
     "#description"
   ).innerHTML = `${response.data.weather[0].description} today!`;
-  console.log(response.data.weather[0].description);
+  console.log(response.data.weather[0].icon);
+  let iconImage = document.querySelector("#mainImage");
+  iconImage.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
 
-  console.log(response.data.timezone);
-  console.log(response.data.dt);
+  celcius = Math.round(response.data.main.temp);
 }
 
 //---------- Temperature Celsius and Fahrenheit
@@ -82,21 +74,27 @@ function showTemperature(response) {
 
 let celsiusDegrees = document.querySelector("#tempTodayCelsius");
 celsiusDegrees.addEventListener("click", changeToCelsius);
-function changeToCelsius() {
+function changeToCelsius(event) {
+  event.preventDefault();
+  fahrenheitDegrees.classList.remove("active");
+  celsiusDegrees.classList.add("active");
   let tempToday = document.querySelector("#tempToday");
-  tempToday.innerHTML = "30";
+  tempToday.innerHTML = Math.round(celcius);
 }
 
 let fahrenheitDegrees = document.querySelector("#tempTodayFahrenheit");
 fahrenheitDegrees.addEventListener("click", changeToFahrenheit);
-function changeToFahrenheit() {
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  celsiusDegrees.classList.remove("active");
+  fahrenheitDegrees.classList.add("active");
   let tempToday = document.querySelector("#tempToday");
-  let fahrenTempToday = "20";
-  tempToday.innerHTML = fahrenTempToday;
+  let fahrenTempToday = celcius * 1.8 + 32;
+  tempToday.innerHTML = Math.round(fahrenTempToday);
 
   // * 1.8 + 32 (fahrenheit)
 }
-
+let celcius = null;
 //------ Button function
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
@@ -119,3 +117,8 @@ defaultCity("New York");
 //function updateWeather() {
 //let updateWeather = inner
 //}
+
+//let apiNewUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=f54b5b6157bb414bf46f982e5f6f106f`;
+//console.log(apiNewUrl);
+//letApiNewUrl1 = `https://api.openweathermap.org/data/2.5/forecast?q=london&appid=f54b5b6157bb414bf46f982e5f6f106f&units=metric`;
+//console.log(letApiNewUrl1);
