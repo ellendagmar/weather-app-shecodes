@@ -31,7 +31,6 @@ let dateTime = document.querySelector("#dateTime");
 dateTime.innerHTML = `${date} ${month} ${year} ${day} ${hours}:${min} `;
 
 //---------- Searching and h1 element
-
 function defaultCity(city) {
   let apiKey = "f54b5b6157bb414bf46f982e5f6f106f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -67,11 +66,11 @@ function showTemperature(response) {
   iconImage.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
 
   celcius = Math.round(response.data.main.temp);
+  fahrenheitDegrees.classList.remove("active");
+  celsiusDegrees.classList.add("active");
 }
 
 //---------- Temperature Celsius and Fahrenheit
-// tempTodayCelsius  and tempTodayFahrenheit and #tempToday
-
 let celsiusDegrees = document.querySelector("#tempTodayCelsius");
 celsiusDegrees.addEventListener("click", changeToCelsius);
 function changeToCelsius(event) {
@@ -91,10 +90,9 @@ function changeToFahrenheit(event) {
   let tempToday = document.querySelector("#tempToday");
   let fahrenTempToday = celcius * 1.8 + 32;
   tempToday.innerHTML = Math.round(fahrenTempToday);
-
-  // * 1.8 + 32 (fahrenheit)
 }
 let celcius = null;
+
 //------ Button function
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
@@ -114,11 +112,3 @@ function showPosition(position) {
 }
 
 defaultCity("New York");
-//function updateWeather() {
-//let updateWeather = inner
-//}
-
-//let apiNewUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=f54b5b6157bb414bf46f982e5f6f106f`;
-//console.log(apiNewUrl);
-//letApiNewUrl1 = `https://api.openweathermap.org/data/2.5/forecast?q=london&appid=f54b5b6157bb414bf46f982e5f6f106f&units=metric`;
-//console.log(letApiNewUrl1);
