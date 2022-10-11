@@ -33,8 +33,6 @@ searchingCity.addEventListener("submit", changeCity);
 let celsiusDegrees = document.querySelector("#tempTodayCelsius");
 celsiusDegrees.addEventListener("click", changeToCelsius);
 let celcius = null;
-let button = document.querySelector("button");
-button.addEventListener("click", getCurrentPosition);
 let fahrenheitDegrees = document.querySelector("#tempTodayFahrenheit");
 fahrenheitDegrees.addEventListener("click", changeToFahrenheit);
 
