@@ -3,10 +3,18 @@ body {
 }
 h1 {
   font-family: "Press Start 2P", cursive;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 10px;
   color: cornflowerblue;
 }
+#form-search {
+  padding-top: 16px;
+}
+#buttonLocation {
+  padding-top: 16px;
+  border: 10px;
+}
+
 #tempTodayCelsius {
   text-decoration: none;
 }
@@ -59,16 +67,11 @@ p {
 .temptoday {
   padding-top: 60px;
 }
-.today:hover {
-  background-color: rgb(247, 238, 219);
+
+.message {
+  background-color: rgba(188, 215, 248, 0.898);
   border-radius: 15px;
-  padding: 40px;
-  margin: 5px 0px 5px 0px;
-}
-.message:hover {
-  background-color: rgb(188, 215, 248);
-  border-radius: 15px;
-  padding: 10px;
+  padding: 5px;
 }
 .messagetext {
   text-align: center;
@@ -107,7 +110,15 @@ p {
   border-radius: 15px;
   padding: 30px;
 }
+.weeklyForecast {
+  background-color: rgba(230, 210, 241, 0.907);
+  border-radius: 15px;
+}
 .link {
   text-decoration: none;
   color: cornflowerblue;
+}
+.todaysWeather {
+  background-color: rgba(99, 99, 99, 0.057);
+  border-radius: 15px;
 }

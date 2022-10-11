@@ -91,8 +91,9 @@ function changeToFahrenheit(event) {
 }
 function getForecast(coordinates) {
   console.log(coordinates);
-  //let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=8ca7dd4e61360b90fb66918853670e48`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=5&appid=f54b5b6157bb414bf46f982e5f6f106f&units=metric`;
+  //let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=c819171fe0abdc14039af4ef5dda283b`;
+  //let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=8ca7dd4e61360b90fb66918853670e48&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=100&appid=f54b5b6157bb414bf46f982e5f6f106f&units=metric`;
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
@@ -104,32 +105,74 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.list;
+  let forecast = response.data;
+  console.log(forecast);
   console.log(response.data);
-  console.log(response.data.list);
+  console.log(response.data.list[0]);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-
-  forecast.forEach(function (forecastDay) {
-    forecastHTML += `<div class="col firstday">
+  forecastHTML += `<div class="col firstday">
             <div class="row">
               <img src="images/${
-                forecastDay.weather[0].icon
+                forecast.list[8].weather[0].icon
               }.png" alt="sunny" />
             </div>
             <div class="row">
-              <p>${formatDay(forecastDay.dt)}</p>
-              <p>${forecastDay.dt_txt}</p>
+              <p>${formatDay(forecast.list[8].dt)}</p>
             </div>
             <div class="row">
               <span class="daysForecast">${Math.round(
-                forecastDay.main.temp_max
-              )}</span>
+                forecast.list[8].main.temp
+              )}°</span>
+            </div>
+          </div>
+          <div class="col secday">
+            <div class="row">
+              <img src="images/${
+                forecast.list[16].weather[0].icon
+              }.png" alt="half cloudy" />
+            </div>
+            <div class="row">
+              <p>${formatDay(forecast.list[16].dt)}</p>
+            </div>
+            <div class="row">
               <span class="daysForecast">${Math.round(
-                forecastDay.main.temp_min
-              )}</span>
-            </div></div>`;
-  });
+                forecast.list[16].main.temp
+              )}°</span>
+            </div>
+          </div>
+          <div class="col thirdday">
+            <div class="row">
+              <img src="images/${
+                forecast.list[24].weather[0].icon
+              }.png" alt="sunny" />
+            </div>
+            <div class="row">
+              <p>${formatDay(forecast.list[24].dt)}</p>
+            </div>
+            <div class="row">
+              <span class="daysForecast">${Math.round(
+                forecast.list[24].main.temp
+              )}°</span>
+            </div>
+          </div>
+          <div class="col fourthday">
+            <div class="row">
+              <img src="images/${
+                forecast.list[32].weather[0].icon
+              }.png" alt="cloudy" />
+            </div>
+            <div class="row">
+              <p>${formatDay(forecast.list[32].dt)}</p>
+            </div>
+            <div class="row">
+              <span class="daysForecast">${Math.round(
+                forecast.list[32].main.temp
+              )}°</span>
+            </div>
+          </div>
+          </div>`;
+
   forecastElement.innerHTML = forecastHTML;
 }
 

@@ -37,11 +37,12 @@
     <div class="container">
       <div class="weatherappborder">
         <!--title & search-->
+
         <div class="row upperborder">
-          <div class="col">
+          <div class="col-6">
             <h1 id="cityName"></h1>
           </div>
-          <div class="col">
+          <div class="col-3">
             <form id="form-search">
               <input
                 id="form-search-input"
@@ -50,100 +51,50 @@
                 autofocus="on"
               />
             </form>
-            <button>Get your location</button>
           </div>
-        </div>
-
-        <!--Today-->
-        <div class="row today">
-          <div class="col-4">
-            <h5 id="dateTime"></h5>
-            <h5 id="humidity">Humidity: 20%</h5>
-            <h5 id="wind">Wind: 1 m/s</h5>
-          </div>
-          <div class="col-2">
-            <div>
-              <h1 id="tempToday"></h1>
-              <h5>
-                <a id="tempTodayCelsius" href="#" class="active">°C</a>
-                /
-                <a id="tempTodayFahrenheit" href="#" class="active">°F</a>
-              </h5>
+          <div class="col-3">
+            <div id="buttonLocation">
+              <button>Get your location</button>
             </div>
           </div>
-          <div class="col-6">
-            <img
-              src="images/01d.png"
-              alt="weather icon for today"
-              class="mainImage"
-              id="mainImage"
-            />
+        </div>
+        <div class="todaysWeather">
+          <!--Today-->
+          <div class="row today">
+            <div class="col-4">
+              <h5 id="dateTime"></h5>
+              <h5 id="humidity">Humidity: 20%</h5>
+              <h5 id="wind">Wind: 1 m/s</h5>
+            </div>
+            <div class="col-2">
+              <div>
+                <h1 id="tempToday"></h1>
+                <h5>
+                  <a id="tempTodayCelsius" href="#" class="active">°C</a>
+                  /
+                  <a id="tempTodayFahrenheit" href="#" class="active">°F</a>
+                </h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <img
+                src="images/01d.png"
+                alt="weather icon for today"
+                class="mainImage"
+                id="mainImage"
+              />
+            </div>
           </div>
         </div>
-
         <!--Todays message-->
         <div class="col message">
-          <h4 id="description">It is sunny today!</h4>
+          <h4 id="description"></h4>
         </div>
 
-        <!--5 day weather report-->
-        <div class="row" id="forecast">
-          <div class="col firstday">
-            <div class="row">
-              <img src="images/01d.png" alt="sunny" />
-            </div>
-            <div class="row">
-              <p>Mon</p>
-            </div>
-            <div class="row">
-              <span class="daysForecast">20°</span>
-              <span class="daysForecast">15°</span>
-            </div>
-          </div>
-          <div class="col secday">
-            <div class="row">
-              <img src="images/04d.png" alt="half cloudy" />
-            </div>
-            <div class="row">
-              <p>Tue</p>
-            </div>
-            <div class="row">
-              <p>16°C</p>
-            </div>
-          </div>
-          <div class="col thirdday">
-            <div class="row">
-              <img src="images/01d.png" alt="sunny" />
-            </div>
-            <div class="row">
-              <p>Wed</p>
-            </div>
-            <div class="row">
-              <p>19°C</p>
-            </div>
-          </div>
-          <div class="col fourthday">
-            <div class="row">
-              <img src="images/09d.png" alt="cloudy" />
-            </div>
-            <div class="row">
-              <p>Thur</p>
-            </div>
-            <div class="row">
-              <p>16°C</p>
-            </div>
-          </div>
-          <div class="col fifthday">
-            <div class="row">
-              <img src="images/10d.png" alt="rainy" />
-            </div>
-            <div class="row">
-              <p>Fri</p>
-            </div>
-            <div class="row">
-              <p>15°C</p>
-            </div>
-          </div>
+        <div class="weeklyForecast">
+          <p>Same time this week, the weather will be...</p>
+          <!--5 day weather report-->
+          <div class="row" id="forecast"></div>
         </div>
       </div>
     </div>
