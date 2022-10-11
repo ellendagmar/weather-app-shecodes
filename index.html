@@ -10,34 +10,29 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
-    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
-    <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!--AXIUS to make API callsfont-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="weatherappborder">
         <!--title & search-->
-
         <div class="row upperborder">
           <div class="col-6">
             <h1 id="cityName"></h1>
@@ -52,9 +47,9 @@
               />
             </form>
           </div>
-          <div class="col-3">
+          <div class="col-2">
             <div id="buttonLocation">
-              <button>Get your location</button>
+              <button>Location</button>
             </div>
           </div>
         </div>
@@ -66,7 +61,7 @@
               <h5 id="humidity">Humidity: 20%</h5>
               <h5 id="wind">Wind: 1 m/s</h5>
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <div>
                 <h1 id="tempToday"></h1>
                 <h5>
@@ -76,11 +71,10 @@
                 </h5>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <img
                 src="images/01d.png"
                 alt="weather icon for today"
-                class="mainImage"
                 id="mainImage"
               />
             </div>
@@ -90,7 +84,6 @@
         <div class="col message">
           <h4 id="description"></h4>
         </div>
-
         <div class="weeklyForecast">
           <p>Same time this week, the weather will be...</p>
           <!--5 day weather report-->

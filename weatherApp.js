@@ -71,7 +71,6 @@ function showTemperature(response) {
   celcius = Math.round(response.data.main.temp);
   fahrenheitDegrees.classList.remove("active");
   celsiusDegrees.classList.add("active");
-  console.log(response.data.coord);
   getForecast(response.data.coord);
 }
 function changeToCelsius(event) {
@@ -91,11 +90,8 @@ function changeToFahrenheit(event) {
 }
 function getForecast(coordinates) {
   console.log(coordinates);
-  //let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=c819171fe0abdc14039af4ef5dda283b`;
-  //let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=8ca7dd4e61360b90fb66918853670e48&units=metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=100&appid=f54b5b6157bb414bf46f982e5f6f106f&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-  console.log(apiUrl);
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -106,9 +102,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data;
-  console.log(forecast);
-  console.log(response.data);
-  console.log(response.data.list[0]);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   forecastHTML += `<div class="col firstday">
@@ -118,7 +111,7 @@ function displayForecast(response) {
               }.png" alt="sunny" />
             </div>
             <div class="row">
-              <p>${formatDay(forecast.list[8].dt)}</p>
+              <p class="weekdayname">${formatDay(forecast.list[8].dt)}</p>
             </div>
             <div class="row">
               <span class="daysForecast">${Math.round(
@@ -133,7 +126,7 @@ function displayForecast(response) {
               }.png" alt="half cloudy" />
             </div>
             <div class="row">
-              <p>${formatDay(forecast.list[16].dt)}</p>
+              <p class="weekdayname">${formatDay(forecast.list[16].dt)}</p>
             </div>
             <div class="row">
               <span class="daysForecast">${Math.round(
@@ -148,7 +141,7 @@ function displayForecast(response) {
               }.png" alt="sunny" />
             </div>
             <div class="row">
-              <p>${formatDay(forecast.list[24].dt)}</p>
+              <p class="weekdayname">${formatDay(forecast.list[24].dt)}</p>
             </div>
             <div class="row">
               <span class="daysForecast">${Math.round(
@@ -163,7 +156,7 @@ function displayForecast(response) {
               }.png" alt="cloudy" />
             </div>
             <div class="row">
-              <p>${formatDay(forecast.list[32].dt)}</p>
+              <p class="weekdayname">${formatDay(forecast.list[32].dt)}</p>
             </div>
             <div class="row">
               <span class="daysForecast">${Math.round(
@@ -175,9 +168,6 @@ function displayForecast(response) {
 
   forecastElement.innerHTML = forecastHTML;
 }
-
-//---------- Temperature Celsius and Fahrenheit
-
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }

@@ -3,9 +3,20 @@ body {
 }
 h1 {
   font-family: "Press Start 2P", cursive;
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 10px;
   color: cornflowerblue;
+}
+h2,
+h3,
+h4,
+h5 {
+  padding-left: 10px;
+  font-family: "Silkscreen", cursive;
+}
+#tempToday {
+  padding-top: 40px;
+  padding-left: 25px;
 }
 #form-search {
   padding-top: 16px;
@@ -14,7 +25,6 @@ h1 {
   padding-top: 16px;
   border: 10px;
 }
-
 #tempTodayCelsius {
   text-decoration: none;
 }
@@ -26,21 +36,11 @@ h1 {
   color: black;
   cursor: default;
 }
-
 .active:hover {
   text-decoration: none;
   color: black;
   cursor: default;
 }
-
-h2,
-h3,
-h4,
-h5 {
-  padding-left: 10px;
-  font-family: "Silkscreen", cursive;
-}
-
 .weatherappborder {
   border: 10px solid cornflowerblue;
   border-radius: 15px;
@@ -52,63 +52,50 @@ p {
   padding-left: 10px;
   text-align: center;
   font-family: "Silkscreen", cursive;
-  font-size: larger;
+  font-size: large;
+}
+.weekdayname {
+  margin: 0 auto;
+  font-size: x-large;
 }
 .daysForecast {
-  padding-left: 10px;
   text-align: center;
   font-family: "Silkscreen", cursive;
-  font-size: larger;
+  font-size: x-large;
 }
-.searching {
-  padding-top: 5px;
-  text-align: right;
-}
-.temptoday {
-  padding-top: 60px;
-}
-
 .message {
   background-color: rgba(188, 215, 248, 0.898);
   border-radius: 15px;
   padding: 5px;
-}
-.messagetext {
   text-align: center;
 }
-.mainImage {
+#mainImage {
   display: block;
-  margin: auto;
   width: 150px;
-}
-.search {
-  padding-top: 20px;
-  padding-left: 10px;
 }
 .firstday:hover {
   background-color: rgb(247, 238, 219);
   border-radius: 15px;
-  padding: 30px;
+  padding: 0px;
+  border-style: inset;
 }
 .secday:hover {
   background-color: rgb(247, 219, 219);
   border-radius: 15px;
-  padding: 30px;
+  padding: 0px;
+  border-style: inset;
 }
 .thirdday:hover {
-  background-color: rgb(99, 247, 173);
+  background-color: rgb(156, 249, 203);
   border-radius: 15px;
-  padding: 30px;
+  padding: 0px;
+  border-style: inset;
 }
 .fourthday:hover {
-  background-color: rgb(116, 254, 254);
+  background-color: rgb(142, 249, 249);
   border-radius: 15px;
-  padding: 30px;
-}
-.fifthday:hover {
-  background-color: rgb(230, 210, 241);
-  border-radius: 15px;
-  padding: 30px;
+  padding: 0px;
+  border-style: inset;
 }
 .weeklyForecast {
   background-color: rgba(230, 210, 241, 0.907);
