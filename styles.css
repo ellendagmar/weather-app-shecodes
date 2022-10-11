@@ -46,6 +46,12 @@ p {
   font-family: "Silkscreen", cursive;
   font-size: larger;
 }
+.daysForecast {
+  padding-left: 10px;
+  text-align: center;
+  font-family: "Silkscreen", cursive;
+  font-size: larger;
+}
 .searching {
   padding-top: 5px;
   text-align: right;
